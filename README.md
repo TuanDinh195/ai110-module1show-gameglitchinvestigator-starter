@@ -26,19 +26,21 @@ It wrote the code, ran away, and now the game is unplayable.
 ## 📝 Document Your Experience
 
 - [ ] Describe the game's purpose.
+
 - [ ] Detail which bugs you found.
+
 - [ ] Explain what fixes you applied.
 
 ## 📸 Demo Walkthrough
 
 Describe your fixed game in numbered steps so a reader can follow along without watching a video:
 
-1. <!-- Describe this step -->
-2. <!-- Describe this step -->
-3. <!-- Describe this step -->
-4. <!-- Describe this step -->
-5. <!-- Add more steps as needed -->
-
+1. <!-- Enter a guess of 50-->
+2. <!-- Game returns a guess of too low -->
+3. <!-- Enters a guess of 57 -->
+4. <!-- Game returns You won! The secret was 54. Final score: 20-->
+5. <!-- Click new game button -->
+6. <!-- Game resets, score resets and history is cleared -->
 **Screenshot** *(optional)*: <!-- Insert a screenshot of your fixed, winning game here -->
 
 ## 🧪 Test Results
@@ -48,6 +50,33 @@ Describe your fixed game in numbered steps so a reader can follow along without 
 # pytest tests/
 # ========================= X passed in 0.XXs =========================
 ```
+================================================= test session starts ==================================================
+platform darwin -- Python 3.13.1, pytest-9.0.3, pluggy-1.6.0 -- /Users/tuandinh/Documents/code/CodePath/projects/ai110-module1show-gameglitchinvestigator-starter/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: /Users/tuandinh/Documents/code/CodePath/projects/ai110-module1show-gameglitchinvestigator-starter
+plugins: anyio-4.13.0
+collected 20 items                                                                                                     
+tests/test_restart_bug.py::TestRestartResetsStatus::test_status_reset_after_loss PASSED                          [  5%]
+tests/test_restart_bug.py::TestRestartResetsStatus::test_status_reset_after_win PASSED                           [ 10%]
+tests/test_restart_bug.py::TestRestartClearsHistory::test_history_cleared_after_loss PASSED                      [ 15%]
+tests/test_restart_bug.py::TestRestartClearsHistory::test_history_cleared_after_win PASSED                       [ 20%]
+tests/test_restart_bug.py::TestRestartResetsAttempts::test_attempts_reset PASSED                                 [ 25%]
+tests/test_restart_bug.py::TestRestartUsesCorrectRange::test_range_matches_difficulty[Easy-1-20] PASSED          [ 30%]
+tests/test_restart_bug.py::TestRestartUsesCorrectRange::test_range_matches_difficulty[Normal-1-100] PASSED       [ 35%]
+tests/test_restart_bug.py::TestRestartUsesCorrectRange::test_range_matches_difficulty[Hard-1-50] PASSED          [ 40%]
+tests/test_restart_bug.py::TestRestartUsesCorrectRange::test_hard_range_is_not_normal_range PASSED               [ 45%]
+tests/test_restart_bug.py::TestCheckGuess::test_exact_match_is_win PASSED                                        [ 50%]
+tests/test_restart_bug.py::TestCheckGuess::test_higher_guess PASSED                                              [ 55%]
+tests/test_restart_bug.py::TestCheckGuess::test_lower_guess PASSED                                               [ 60%]
+tests/test_restart_bug.py::TestParseGuess::test_valid_integer PASSED                                             [ 65%]
+tests/test_restart_bug.py::TestParseGuess::test_float_string_truncated PASSED                                    [ 70%]
+tests/test_restart_bug.py::TestParseGuess::test_empty_string_is_invalid PASSED                                   [ 75%]
+tests/test_restart_bug.py::TestParseGuess::test_none_is_invalid PASSED                                           [ 80%]
+tests/test_restart_bug.py::TestParseGuess::test_non_numeric_is_invalid PASSED                                    [ 85%]
+tests/test_restart_bug.py::TestUpdateScore::test_win_early_gives_high_points PASSED                              [ 90%]
+tests/test_restart_bug.py::TestUpdateScore::test_too_low_deducts_points PASSED                                   [ 95%]
+tests/test_restart_bug.py::TestUpdateScore::test_score_never_below_minimum_on_win PASSED                         [100%]
+
 
 ## 🚀 Stretch Features
 
