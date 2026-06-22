@@ -26,21 +26,26 @@ It wrote the code, ran away, and now the game is unplayable.
 ## 📝 Document Your Experience
 
 - [ ] Describe the game's purpose.
-
+The game's purpose is to guess a mystery number.
 - [ ] Detail which bugs you found.
-
+1) The secret number is outside the range
+2) New Game does not work after the game is over
+3) The History appends the previous number guessed, not the most recent
+4) New Game does not restart history or score but resets attemps and makes a new secret number
+5) The Range of Numbers appear to be 1 to 100 for every difficulty
 - [ ] Explain what fixes you applied.
-
+Fixed the bug that new game would not start a new game. 
+Fixed the bug where new game would not clear the history
 ## 📸 Demo Walkthrough
 
 Describe your fixed game in numbered steps so a reader can follow along without watching a video:
 
-1. <!-- Enter a guess of 50-->
-2. <!-- Game returns a guess of too low -->
-3. <!-- Enters a guess of 57 -->
-4. <!-- Game returns You won! The secret was 54. Final score: 20-->
-5. <!-- Click new game button -->
-6. <!-- Game resets, score resets and history is cleared -->
+1. Enter a guess of 50
+2. Game returns a guess of too low 
+3. Enters a guess of 57 
+4. Game returns You won! The secret was 54. Final score: 20
+5. Click new game button 
+6. Game resets, score resets and history is cleared 
 **Screenshot** *(optional)*: <!-- Insert a screenshot of your fixed, winning game here -->
 
 ## 🧪 Test Results
